@@ -3,10 +3,10 @@ version: '3.7'
 services:
   users:
     build:
-      context: ./services/users
+      context: .
       dockerfile: Dockerfile-dev
     volumes:
-      - './services/users:/usr/src/app'
+      - '.:/usr/src/app'
     ports:
       - 5001:5000
     environment:
@@ -19,12 +19,10 @@ services:
 
   users-db:
     build:
-      context: ./services/users/project/db
+      context: ./project/db
       dockerfile: Dockerfile
     ports:
       - 5435:5432
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-
-
