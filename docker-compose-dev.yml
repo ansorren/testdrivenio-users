@@ -16,6 +16,8 @@ services:
       - DATABASE_TEST_URL=postgres://postgres:postgres@users-db:5432/users_test
     depends_on:
       - users-db
+    links:
+      - users-db
 
   users-db:
     build:
