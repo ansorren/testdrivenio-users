@@ -20,10 +20,9 @@ class TestDevelopmentConfig(TestCase):
         """test app is development """
         self.assertTrue(app.config["SECRET_KEY"] == "my_precious")
         self.assertFalse(current_app is None)
-        self.assertTrue(
-            app.config["SQLALCHEMY_DATABASE_URI"] == os.environ.get("DATABASE_URL")
+        self.assertTrue(app.config["SQLALCHEMY_DATABASE_URI"] == os.environ.get("DATABASE_URL"))
         self.assertTrue(app.config["DEBUG_TB_ENABLED"])
-        )
+
 
 
 class TestTestingConfig(TestCase):
