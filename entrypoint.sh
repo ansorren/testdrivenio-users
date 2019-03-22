@@ -1,6 +1,7 @@
 #!/bin/sh
+
 while ! nc -z users-db 5432; do
-  sleep 0.1
+  sleep 1
 done
 
 echo "postgres started"
