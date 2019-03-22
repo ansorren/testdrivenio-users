@@ -2,7 +2,7 @@ iversion: 2
 jobs:
  build:
    machine: true
-   working_directory: /tmp
+   working_directory: /tmp/repo/
 
    steps:
      - checkout
